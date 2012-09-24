@@ -63,6 +63,11 @@ EWXWEXPORT(void,wxSplitterWindow_SetSashSize)(void* self,int width)
 	((wxSplitterWindow*)self)->SetSashSize(width);
 }
 	
+EWXWEXPORT(void,wxSplitterWindow_SetSashGravity)(void* self,double width)
+{
+	((wxSplitterWindow*)self)->SetSashGravity(width);
+}
+	
 EWXWEXPORT(void,wxSplitterWindow_SetBorderSize)(void* self,int width)
 {
 	((wxSplitterWindow*)self)->SetBorderSize(width);
@@ -71,6 +76,11 @@ EWXWEXPORT(void,wxSplitterWindow_SetBorderSize)(void* self,int width)
 EWXWEXPORT(int,wxSplitterWindow_GetSashSize)(void* self)
 {
 	return ((wxSplitterWindow*)self)->GetSashSize();
+}
+	
+EWXWEXPORT(double,wxSplitterWindow_GetSashGravity)(void* self)
+{
+	return ((wxSplitterWindow*)self)->GetSashGravity();
 }
 	
 EWXWEXPORT(int,wxSplitterWindow_GetBorderSize)(void* self)

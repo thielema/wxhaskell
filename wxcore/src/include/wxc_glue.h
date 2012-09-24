@@ -4397,6 +4397,7 @@ int        wxSplitterWindow_GetBorderSize( TSelf(wxSplitterWindow) _obj );
 int        wxSplitterWindow_GetMinimumPaneSize( TSelf(wxSplitterWindow) _obj );
 int        wxSplitterWindow_GetSashPosition( TSelf(wxSplitterWindow) _obj );
 int        wxSplitterWindow_GetSashSize( TSelf(wxSplitterWindow) _obj );
+double     wxSplitterWindow_GetSashGravity( TSelf(wxSplitterWindow) _obj );
 int        wxSplitterWindow_GetSplitMode( TSelf(wxSplitterWindow) _obj );
 TClass(wxWindow) wxSplitterWindow_GetWindow1( TSelf(wxSplitterWindow) _obj );
 TClass(wxWindow) wxSplitterWindow_GetWindow2( TSelf(wxSplitterWindow) _obj );
@@ -4407,6 +4408,7 @@ void       wxSplitterWindow_SetBorderSize( TSelf(wxSplitterWindow) _obj, int wid
 void       wxSplitterWindow_SetMinimumPaneSize( TSelf(wxSplitterWindow) _obj, int min );
 void       wxSplitterWindow_SetSashPosition( TSelf(wxSplitterWindow) _obj, int position, TBool redraw );
 void       wxSplitterWindow_SetSashSize( TSelf(wxSplitterWindow) _obj, int width );
+void       wxSplitterWindow_SetSashGravity( TSelf(wxSplitterWindow) _obj, double width );
 void       wxSplitterWindow_SetSplitMode( TSelf(wxSplitterWindow) _obj, int mode );
 TBool      wxSplitterWindow_SplitHorizontally( TSelf(wxSplitterWindow) _obj, TClass(wxWindow) window1, TClass(wxWindow) window2, int sashPosition );
 TBool      wxSplitterWindow_SplitVertically( TSelf(wxSplitterWindow) _obj, TClass(wxWindow) window1, TClass(wxWindow) window2, int sashPosition );
