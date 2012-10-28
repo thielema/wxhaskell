@@ -131,7 +131,7 @@ instance Textual (Window a) where
         = ifInstanceOf w classComboBox
             (\cb -> (comboBoxGetValue cb, \s -> do comboBoxClear cb; comboBoxAppend cb s)) $
           ifInstanceOf w classTextCtrl
-            (\tc -> (textCtrlGetValue tc, \s -> do textCtrlChangeValue tc s)) $
+            (\tc -> (textCtrlGetValue tc, \s -> do textCtrlChangeValueFix tc s)) $
             (windowGetLabel w,windowSetLabel w)
 
   appendText w s
@@ -141,6 +141,17 @@ instance Textual (Window a) where
         (\tc -> textCtrlAppendText tc s)
         (set w [text :~ (++s)])
 
+{-
+work-around for a difference between Linux/GTK and Mac:
+With the Mac solution
+the font won't be monospace on Linux/GTK
+if a monospace font is requested.
+-}
+textCtrlChangeValueFix :: TextCtrl a -> String -> IO ()
+textCtrlChangeValueFix tc s =
+   case wxToolkit of
+      WxGTK -> textCtrlClear tc >> textCtrlWriteText tc s
+      _ -> textCtrlChangeValue tc s
 
 -- | Retrieve the initial title from the |text| attribute.
 initialText :: Textual w => (String -> [Prop w] -> a) -> [Prop w] -> a
