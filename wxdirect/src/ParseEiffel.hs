@@ -20,6 +20,8 @@ import Text.ParserCombinators.Parsec.Language
 import Types
 
 import System.Environment ( getEnv )
+import System.IO.Error ( catchIOError )
+
 
 {-----------------------------------------------------------------------------------------
    Testing
@@ -33,7 +35,7 @@ test
 
 getDefaultEiffelFiles :: IO [FilePath]
 getDefaultEiffelFiles
-  = do wxwin <- getEnv "WXWIN" `catch` \err -> return ""
+  = do wxwin <- getEnv "WXWIN" `catchIOError` \err -> return ""
        return [wxwin ++ "/wxc/include/wxc_defs.e"
               ,wxwin ++ "/wxc/ewxw/eiffel/spec/r_2_4/wx_defs.e"]
 
