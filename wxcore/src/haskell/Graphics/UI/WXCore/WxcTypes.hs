@@ -96,7 +96,7 @@ module Graphics.UI.WXCore.WxcTypes(
             -- *** ByteString
             , withByteStringResult, withLazyByteStringResult
             -- *** CInt
-            , CInt, toCInt, fromCInt, withIntResult
+            , CInt(CInt), toCInt, fromCInt, withIntResult
             -- *** Word
             , Word
             -- *** 8 bit Word
@@ -104,10 +104,10 @@ module Graphics.UI.WXCore.WxcTypes(
             -- *** 64 bit Integer
             , Int64
             -- *** CDouble
-            , CDouble, toCDouble, fromCDouble, withDoubleResult
+            , CDouble(CDouble), toCDouble, fromCDouble, withDoubleResult
             -- *** CChar
             , CChar, toCChar, fromCChar, withCharResult
-            , CWchar, toCWchar
+            , CWchar(CWchar), toCWchar
             -- *** CBool
             , CBool, toCBool, fromCBool, withBoolResult
             -- ** Pointers
