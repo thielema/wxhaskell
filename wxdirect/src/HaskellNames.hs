@@ -147,6 +147,7 @@ isBuiltin name
 {-----------------------------------------------------------------------------------------
  Haddock prologue
 -----------------------------------------------------------------------------------------}
+getPrologue :: String -> String -> String -> [FilePath] -> IO [String]
 getPrologue moduleName content contains inputFiles
   = do time <- getCurrentTime
        return (prologue time)
