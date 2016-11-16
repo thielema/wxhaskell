@@ -173,6 +173,19 @@ class Colored w where
 -- | Visible widgets.
 class Visible w where
   -- | Is the widget visible?
+  --
+  -- If you hide a widget, its space will not immediately
+  -- be filled by other widgets.
+  -- Vice versa if you make a widget visible
+  -- it will not have space to be rendered into.
+  -- That is, when changing the visibility state
+  -- it is advised to update the layout
+  -- using 'Graphics.UI.WX.Layout.windowReFit'.
+  --
+  -- Example:
+  --
+  -- > do set w [ visible := False ]
+  -- >    windowReFit w
   visible    :: Attr w Bool
   -- | Refresh the widget explicitly.
   refresh    :: w -> IO ()
